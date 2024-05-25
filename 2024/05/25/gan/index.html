@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode刷题记 1, Mount&#39;s Blog">
+    <meta name="keywords" content="GAN, Mount&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode刷题记 1 | Mount&#39;s Blog</title>
+    <title>GAN | Mount&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode刷题记 1</h1>
+                    <h1 class="description center-align post-title">GAN</h1>
                 </div>
             </div>
         </div>
@@ -431,13 +431,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E7%AE%97%E6%B3%95%EF%BC%8C%E5%88%B7%E9%A2%98/">
-                                <span class="chip bg-color">算法，刷题</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -445,8 +441,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode%E9%A2%98%E8%AE%B0/" class="post-category">
-                                LeetCode题记
+                            <a href="/categories/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/" class="post-category">
+                                研究方向
                             </a>
                         
                     </div>
@@ -458,7 +454,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-05-23
+                    2024-05-25
                 </div>
                 
 
@@ -479,24 +475,37 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="字母异位词分组（49）"><a href="#字母异位词分组（49）" class="headerlink" title="字母异位词分组（49）"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/group-anagrams/">字母异位词分组</a>（49）</h1><h2 id="unordered-map用法"><a href="#unordered-map用法" class="headerlink" title="unordered_map用法"></a>unordered_map用法</h2><p>unordered_map不会根据key的大小进行排序，存储时是根据key的hash值判断元素是否相同，即unordered_map内部元素是无序的。unordered_map的底层是一个防冗余的哈希表（开链法避免地址冲突）。	</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unordered_map&lt;string, vector&lt;string&gt;&gt; m;</span><br><span class="line">m[sortedS].<span class="built_in">push_back</span>(i)</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-
-
-<h2 id="auto关键字用于循环"><a href="#auto关键字用于循环" class="headerlink" title="auto关键字用于循环"></a>auto关键字用于循环</h2><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;s : strs) {</span><br><span class="line">    <span class="comment">// 循环体</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li><code>auto</code> 是C++11引入的关键字，用于自动推断变量的类型。</li>
-<li><code>&amp;s</code> 是循环变量的声明，表示将容器中的每个元素赋值给变量 <code>s</code>。<code>&amp;</code> 表示使用引用（reference）语义，可以直接修改容器中的元素。</li>
-<li><code>strs</code> 是要遍历的容器。</li>
-</ul>
-<h2 id="题解思想"><a href="#题解思想" class="headerlink" title="题解思想"></a>题解思想</h2><p>将每个字符串内部进行排序，由此如abb和bab都将变成abb</p>
-<p>然后将每个排序好的字符串入unordered_map，键是排序好的abb，建值是abb和bab</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; <span class="built_in">groupAnagrams</span>(vector&lt;string&gt;&amp; strs) {</span><br><span class="line">        unordered_map&lt;string,vector&lt;string&gt;&gt;m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;i:strs){</span><br><span class="line">            string sortedS=i;</span><br><span class="line">            <span class="built_in">sort</span>(sortedS.<span class="built_in">begin</span>(),sortedS.<span class="built_in">end</span>());</span><br><span class="line">            m[sortedS].<span class="built_in">push_back</span>(i);</span><br><span class="line">        }</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt;res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;i:m){</span><br><span class="line">            res.<span class="built_in">push_back</span>(i.second);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>
-
+                <h1 id="GAN-Generative-Adversarial-Nets"><a href="#GAN-Generative-Adversarial-Nets" class="headerlink" title="GAN - Generative Adversarial Nets"></a>GAN - Generative Adversarial Nets</h1><h2 id="两个model"><a href="#两个model" class="headerlink" title="两个model"></a>两个model</h2><p>一个生成某种分布（某种图/文）</p>
+<p>另一个分辨生成的是否为真实世界或是模型生成</p>
+<p>生成模型尽可能让辨别模型犯错，存在这样的解（特定的分布）使得分辨模型无法识别。如果两个模型都是<em><strong>多层感知机</strong></em>，整个系统就可以通过<em><strong>误差反传（backpropagation）</strong></em>进行训练。而无需通过<em><strong>马尔科夫链</strong></em></p>
+<h2 id="深度学习≠深度神经网络"><a href="#深度学习≠深度神经网络" class="headerlink" title="深度学习≠深度神经网络"></a>深度学习≠深度神经网络</h2><blockquote>
+<p>The promise of deep learning is to discover rich, hierarchical models [2] that represent probability distributions over the kinds of data encountered in artificial intelligence applications, such as natural images, audio waveforms containing speech, and symbols in natural language corpora. </p>
+<p>–GAN paper</p>
+</blockquote>
+<p>深度学习是去发现丰富的有多重层次的模型，这些模型可以对AI各种应用中需要的概率分布进行表示</p>
+<p>深度学习≠深度神经网络 </p>
+<p>深度学习做的是找到对某问题的概率分布最对的模型</p>
+<p>深度神经网络只是深度学习的手段并非全部</p>
+<h2 id="在辨别模型上发展好但在生成模型上发展差"><a href="#在辨别模型上发展好但在生成模型上发展差" class="headerlink" title="在辨别模型上发展好但在生成模型上发展差"></a>在辨别模型上发展好但在生成模型上发展差</h2><p>在当时并未有当下如此发展的AIGC</p>
+<p>辨别模型由于最大化似然函数时无需近似但生成模型最大化似然函数需要对概率分布进行很多近似，这种近似带来很多困难</p>
+<p>GAN正是不需要这种近似来达到最大似然</p>
+<h2 id="在随机的噪声上生成分布"><a href="#在随机的噪声上生成分布" class="headerlink" title="在随机的噪声上生成分布"></a>在随机的噪声上生成分布</h2><p>生成模型是multilayer perceptron</p>
+<p>输入是随机噪声</p>
+<p>生成模型能够把产生随机噪声的分布（同常是高斯分布）映射到任何一个我们想要拟合的分布</p>
+<p>GAN并非明明白白生成一个分布，而是暴力近似到和需要的分布十分接近的一个分布但并不清楚这个分布到底是怎样</p>
+<p>好处是算的快（whatever 好用就行 怎么来的别管）</p>
+<h2 id="Adversarial-nets"><a href="#Adversarial-nets" class="headerlink" title="Adversarial nets"></a>Adversarial nets</h2><p><em>G</em> 是带参数 <em>θ</em> 的生成模型</p>
+<p><em>D</em> 是另一个多层感知机，输出是 <em>D(x)</em> 代表x来自数据拟合后的分布而非真正的分布的概率，1表示100%概率假</p>
+<p>训练D去最好的分辨，同时训练G去最小化<code>log(1 − D(G(z)))</code></p>
+<p><code>log D(x)</code>若分辨地越好，则值越接近0</p>
+<p><code>log(1 − D(G(z)))</code>若生成地越好 <em>D(G(z))</em> 越接近0，整体越接近0</p>
+<p>然后取两者期望，当两者都不能进步是取得Nash均衡<br>$$<br> \min_{G} \max_{D} V(D, G) = \mathbb{E}{x \sim p{data}(x)} [\log D(x)] + \mathbb{E}{z \sim p{z}(z)} [\log(1 - D(G(z)))]<br>$$<br>最终达到的效果是分辨模型分辨任何生成器生成的数据时都是1/2概率</p>
+<p><img src="C:\Users\24958\Desktop\归档\Typora笔记\1714613735171.png" alt="1714613735171"></p>
+<p>k是一个超参数，在过程中k不能过小过大，过小会导致分辨模型太幼稚，过大则会导致分辨模型过聪明。不利于使生成器最优化</p>
+<h2 id="Theoretical-Results"><a href="#Theoretical-Results" class="headerlink" title="Theoretical Results"></a>Theoretical Results</h2><p>理论上G有且仅有一个最优解，就是当G模拟出的分布=实际上的分布时</p>
+<p>对确定的G，D的最优解是（<em>表示最优解）：<br>$$<br>D_{G}^{</em>}(x) = \frac{p_{data}(x)}{p_{data}(x) + p_{g}(x)}<br>$$<br>对任意的x当G最好时，Pg都等于Pdata，于是D(x)最优解是1/2</p>
+<p><strong>two sample test</strong> 判断两个数据是否来自同一分布</p>
+<p>后面的数学证明<del>_</del></p>
 
                 
             </div>
@@ -523,7 +532,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://MountZz.github.io/2024/05/23/leetcode-shua-ti-ji-1/">https://MountZz.github.io/2024/05/23/leetcode-shua-ti-ji-1/</a>
+                    <a href="https://MountZz.github.io/2024/05/25/gan/">https://MountZz.github.io/2024/05/25/gan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -560,11 +569,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E7%AE%97%E6%B3%95%EF%BC%8C%E5%88%B7%E9%A2%98/">
-                                    <span class="chip bg-color">算法，刷题</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -736,13 +741,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/05/25/leetcode-shua-ti-ji-2/">
+                <a href="/2024/05/25/sheng-xin-shu-ju-chai-yi-fen-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="LeetCode刷题记2">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="生信数据-差异分析">
                         
-                        <span class="card-title">LeetCode刷题记2</span>
+                        <span class="card-title">生信数据-差异分析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -759,13 +764,21 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode%E9%A2%98%E8%AE%B0/" class="post-category">
-                                    LeetCode题记
+                            <a href="/categories/%E7%95%AA%E5%A4%96/" class="post-category">
+                                    番外
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B7%AE%E5%BC%82%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">差异分析</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -777,13 +790,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/05/22/zhua-qu-wang-ye-shu-ju/">
+                <a href="/2024/05/25/gcn/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="抓取网页数据">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="GCN">
                         
-                        <span class="card-title">抓取网页数据</span>
+                        <span class="card-title">GCN</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -794,27 +807,19 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    实用机器学习
+                            <a href="/categories/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/" class="post-category">
+                                    研究方向
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE/">
-                        <span class="chip bg-color">数据</span>
-                    </a>
-                    
                 </div>
                 
             </div>

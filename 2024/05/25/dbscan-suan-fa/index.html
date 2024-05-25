@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode刷题记 1, Mount&#39;s Blog">
+    <meta name="keywords" content="DBSCAN算法, Mount&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode刷题记 1 | Mount&#39;s Blog</title>
+    <title>DBSCAN算法 | Mount&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode刷题记 1</h1>
+                    <h1 class="description center-align post-title">DBSCAN算法</h1>
                 </div>
             </div>
         </div>
@@ -431,13 +431,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E7%AE%97%E6%B3%95%EF%BC%8C%E5%88%B7%E9%A2%98/">
-                                <span class="chip bg-color">算法，刷题</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -445,8 +441,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LeetCode%E9%A2%98%E8%AE%B0/" class="post-category">
-                                LeetCode题记
+                            <a href="/categories/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/" class="post-category">
+                                研究方向
                             </a>
                         
                     </div>
@@ -458,7 +454,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-05-23
+                    2024-05-25
                 </div>
                 
 
@@ -479,24 +475,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="字母异位词分组（49）"><a href="#字母异位词分组（49）" class="headerlink" title="字母异位词分组（49）"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/group-anagrams/">字母异位词分组</a>（49）</h1><h2 id="unordered-map用法"><a href="#unordered-map用法" class="headerlink" title="unordered_map用法"></a>unordered_map用法</h2><p>unordered_map不会根据key的大小进行排序，存储时是根据key的hash值判断元素是否相同，即unordered_map内部元素是无序的。unordered_map的底层是一个防冗余的哈希表（开链法避免地址冲突）。	</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unordered_map&lt;string, vector&lt;string&gt;&gt; m;</span><br><span class="line">m[sortedS].<span class="built_in">push_back</span>(i)</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-
-
-<h2 id="auto关键字用于循环"><a href="#auto关键字用于循环" class="headerlink" title="auto关键字用于循环"></a>auto关键字用于循环</h2><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;s : strs) {</span><br><span class="line">    <span class="comment">// 循环体</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
+                <h1 id="DBSCAN算法"><a href="#DBSCAN算法" class="headerlink" title="DBSCAN算法"></a>DBSCAN算法</h1><p>DBSCAN (<strong>D</strong>ensity-<strong>B</strong>ased <strong>S</strong>patial <strong>C</strong>lustering of <strong>A</strong>pplications with <strong>N</strong>oise，具有噪声的基于密度的聚类方法) </p>
+<p>这里利用DBSCAN主要是做道路分割</p>
+<p>为何使用DBSCAN？</p>
+<p>因为在田和在路上的速度不同，导致定位信息的密度不同，因此选择基于密度的聚类</p>
+<h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2><p>无监督学习的一种。将数据集划分为指定的群组或簇，划分成的群组内是在指定的的维度上具有相似的属性</p>
+<p>即按照维度相近程度将数据集划分</p>
+<p>Clustering 算法目前有 5 种常见类别：</p>
 <ul>
-<li><code>auto</code> 是C++11引入的关键字，用于自动推断变量的类型。</li>
-<li><code>&amp;s</code> 是循环变量的声明，表示将容器中的每个元素赋值给变量 <code>s</code>。<code>&amp;</code> 表示使用引用（reference）语义，可以直接修改容器中的元素。</li>
-<li><code>strs</code> 是要遍历的容器。</li>
+<li>Connectivity-based clustering（基于连通性的聚类）：基于整个数据集对象间距离计算的聚类方法，近邻点比更远距离的点更具有相关性。</li>
+<li>Centroid-based clustering（基于质心的聚类）：计算每个簇的中心向量，以此来确定每个样本所属的类别</li>
+<li>Distribution-based clustering（基于分布的聚类）：同一簇内的数据点满足相同的分布（正态分布或高斯分布）</li>
+<li>Density-based clustering（基于密度的聚类）：在数据空间中，搜索不同数据密度的空间区域，然后将不同密度的区域分开，同一区域内的数据点归为同一个簇</li>
+<li>Grid-based clustering（基于网格的聚类）：通过扫描数据集，将数据空间根据所选属性划分为数个网格单元，并将样本点划分到相应的单元中，最后根据单元的密度形成簇，这种方法在低维空间中比较有效，而且只需通过扫描一遍数据集，就可以得到每个单元格中样本点的分布情况</li>
 </ul>
-<h2 id="题解思想"><a href="#题解思想" class="headerlink" title="题解思想"></a>题解思想</h2><p>将每个字符串内部进行排序，由此如abb和bab都将变成abb</p>
-<p>然后将每个排序好的字符串入unordered_map，键是排序好的abb，建值是abb和bab</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; <span class="built_in">groupAnagrams</span>(vector&lt;string&gt;&amp; strs) {</span><br><span class="line">        unordered_map&lt;string,vector&lt;string&gt;&gt;m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;i:strs){</span><br><span class="line">            string sortedS=i;</span><br><span class="line">            <span class="built_in">sort</span>(sortedS.<span class="built_in">begin</span>(),sortedS.<span class="built_in">end</span>());</span><br><span class="line">            m[sortedS].<span class="built_in">push_back</span>(i);</span><br><span class="line">        }</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt;res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;i:m){</span><br><span class="line">            res.<span class="built_in">push_back</span>(i.second);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>
-
+<h2 id="DBSCAN算法思想"><a href="#DBSCAN算法思想" class="headerlink" title="DBSCAN算法思想"></a>DBSCAN算法思想</h2><p>定义参数(ϵ, MinPts)用来描述邻域的样本分布密度，参数 𝜖 描述选定点的空间半径阈值，MinPts 是半径 𝜖 下最小包含的样本数阈值</p>
+<p>假设我的样本集是D=(x1,x2,…,xm)(𝑥1,𝑥2,…,𝑥𝑚),则DBSCAN具体的密度描述定义如下：</p>
+<ol>
+<li>ϵ-邻域：对于xj∈D𝑥𝑗∈𝐷，其ϵ𝜖-邻域包含样本集D中与xj𝑥𝑗的距离不大于ϵ𝜖的子样本集，即Nϵ(xj)={xi∈D|distance(xi,xj)≤ϵ}𝑁𝜖(𝑥𝑗)={𝑥𝑖∈𝐷|𝑑𝑖𝑠𝑡𝑎𝑛𝑐𝑒(𝑥𝑖,𝑥𝑗)≤𝜖}, 这个子样本集的个数记为|Nϵ(xj)||𝑁𝜖(𝑥𝑗)|　</li>
+<li>核心对象：对于任一样本xj∈D𝑥𝑗∈𝐷，如果其ϵ𝜖-邻域对应的Nϵ(xj)𝑁𝜖(𝑥𝑗)至少包含MinPts个样本，即如果|Nϵ(xj)|≥MinPts|𝑁𝜖(𝑥𝑗)|≥𝑀𝑖𝑛𝑃𝑡𝑠，则xj𝑥𝑗是核心对象。　</li>
+<li>密度直达：如果x<sub>i</sub>位于xj𝑥𝑗的ϵ𝜖-邻域中，且xj𝑥𝑗是核心对象，则称xi𝑥𝑖由xj𝑥𝑗密度直达。注意反之不一定成立，即此时不能说xj𝑥𝑗由xi𝑥𝑖密度直达, 除非且xi𝑥𝑖也是核心对象。</li>
+<li>密度可达：对于xi𝑥𝑖和xj𝑥𝑗,如果存在样本样本序列p1,p2,…,pT𝑝1,𝑝2,…,𝑝𝑇,满足p1=xi,pT=xj𝑝1=𝑥𝑖,𝑝𝑇=𝑥𝑗, 且pt+1𝑝𝑡+1由pt𝑝𝑡密度直达，则称xj𝑥𝑗由xi𝑥𝑖密度可达。也就是说，密度可达满足传递性。此时序列中的传递样本p1,p2,…,pT−1𝑝1,𝑝2,…,𝑝𝑇−1均为核心对象，因为只有核心对象才能使其他样本密度直达。注意密度可达也不满足对称性，这个可以由密度直达的不对称性得出。</li>
+<li>密度相连：对于xi𝑥𝑖和xj𝑥𝑗,如果存在核心对象样本xk𝑥𝑘，使xi𝑥𝑖和xj𝑥𝑗均由xk𝑥𝑘密度可达，则称xi𝑥𝑖和xj𝑥𝑗密度相连。注意密度相连关系是满足对称性的。</li>
+</ol>
 
                 
             </div>
@@ -523,7 +524,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://MountZz.github.io/2024/05/23/leetcode-shua-ti-ji-1/">https://MountZz.github.io/2024/05/23/leetcode-shua-ti-ji-1/</a>
+                    <a href="https://MountZz.github.io/2024/05/25/dbscan-suan-fa/">https://MountZz.github.io/2024/05/25/dbscan-suan-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -560,11 +561,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E7%AE%97%E6%B3%95%EF%BC%8C%E5%88%B7%E9%A2%98/">
-                                    <span class="chip bg-color">算法，刷题</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -736,13 +733,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/05/25/leetcode-shua-ti-ji-2/">
+                <a href="/2024/05/25/gcn/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="LeetCode刷题记2">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="GCN">
                         
-                        <span class="card-title">LeetCode刷题记2</span>
+                        <span class="card-title">GCN</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -759,8 +756,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/LeetCode%E9%A2%98%E8%AE%B0/" class="post-category">
-                                    LeetCode题记
+                            <a href="/categories/%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91/" class="post-category">
+                                    研究方向
                                 </a>
                             
                             
@@ -777,13 +774,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/05/22/zhua-qu-wang-ye-shu-ju/">
+                <a href="/2024/05/25/leetcode-shua-ti-ji-3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="抓取网页数据">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="LeetCode刷题记3">
                         
-                        <span class="card-title">抓取网页数据</span>
+                        <span class="card-title">LeetCode刷题记3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -794,27 +791,19 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AE%9E%E7%94%A8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    实用机器学习
+                            <a href="/categories/LeetCode%E9%A2%98%E8%AE%B0/" class="post-category">
+                                    LeetCode题记
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE/">
-                        <span class="chip bg-color">数据</span>
-                    </a>
-                    
                 </div>
                 
             </div>
