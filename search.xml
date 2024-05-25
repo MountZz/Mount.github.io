@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>LeetCode刷题记 1</title>
+      <link href="/2024/05/23/leetcode-shua-ti-ji-1/"/>
+      <url>/2024/05/23/leetcode-shua-ti-ji-1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="字母异位词分组（49）"><a href="#字母异位词分组（49）" class="headerlink" title="字母异位词分组（49）"></a><a href="https://leetcode.cn/problems/group-anagrams/">字母异位词分组</a>（49）</h1><h2 id="unordered-map用法"><a href="#unordered-map用法" class="headerlink" title="unordered_map用法"></a>unordered_map用法</h2><p>unordered_map不会根据key的大小进行排序，存储时是根据key的hash值判断元素是否相同，即unordered_map内部元素是无序的。unordered_map的底层是一个防冗余的哈希表（开链法避免地址冲突）。</p><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unordered_map&lt;string, vector&lt;string&gt;&gt; m;</span><br><span class="line">m[sortedS].<span class="built_in">push_back</span>(i)</span><br></pre></td></tr></tbody></table></figure><h2 id="auto关键字用于循环"><a href="#auto关键字用于循环" class="headerlink" title="auto关键字用于循环"></a>auto关键字用于循环</h2><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;s : strs) {</span><br><span class="line">    <span class="comment">// 循环体</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><ul><li><code>auto</code> 是C++11引入的关键字，用于自动推断变量的类型。</li><li><code>&amp;s</code> 是循环变量的声明，表示将容器中的每个元素赋值给变量 <code>s</code>。<code>&amp;</code> 表示使用引用（reference）语义，可以直接修改容器中的元素。</li><li><code>strs</code> 是要遍历的容器。</li></ul><h2 id="题解思想"><a href="#题解思想" class="headerlink" title="题解思想"></a>题解思想</h2><p>将每个字符串内部进行排序，由此如abb和bab都将变成abb</p><p>然后将每个排序好的字符串入unordered_map，键是排序好的abb，建值是abb和bab</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;string&gt;&gt; <span class="built_in">groupAnagrams</span>(vector&lt;string&gt;&amp; strs) {</span><br><span class="line">        unordered_map&lt;string,vector&lt;string&gt;&gt;m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;i:strs){</span><br><span class="line">            string sortedS=i;</span><br><span class="line">            <span class="built_in">sort</span>(sortedS.<span class="built_in">begin</span>(),sortedS.<span class="built_in">end</span>());</span><br><span class="line">            m[sortedS].<span class="built_in">push_back</span>(i);</span><br><span class="line">        }</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt;res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;i:m){</span><br><span class="line">            res.<span class="built_in">push_back</span>(i.second);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode题记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法，刷题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>抓取网页数据</title>
       <link href="/2024/05/22/zhua-qu-wang-ye-shu-ju/"/>
       <url>/2024/05/22/zhua-qu-wang-ye-shu-ju/</url>
